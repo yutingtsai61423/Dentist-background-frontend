@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>牙樂多 | 後台系統Template</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+    <!-- VickyTsai style -->
+    <link rel="stylesheet" href="css/vickyCss.css" />
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <!-- 主要開發區塊 -->
+    <div class="wrapper">
+      <header id="header"></header>
+      <!-- Main Sidebar Container 主側邊欄-->
+      <aside
+        id="sidebar"
+        class="main-sidebar sidebar-dark-primary elevation-4"
+      ></aside>
+      <!-- Content Wrapper. Contains page content 主頁面欄位-->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">門診時刻修改</h1>
+              </div>
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+              <!-- <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        病歷系統
+                                    </li>
+                                </ol>
+                            </div> -->
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row" style="width: 80%; margin-left: 50px">
+              <!-- left column -->
+              <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-info">
+                  <div class="card-header">
+                    <h3 class="card-title">門診時刻</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="quickForm">
+                    <div class="card-body">
+                      <div class="card-body pad table-responsive">
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label>請選擇日期</label>
+                            <select
+                              class="selectDate form-control"
+                              style="width: 200px"
+                            >
+                              <option class="week1" selected></option>
+                              <option class="week2"></option>
+                              <option class="week3"></option>
+                              <option class="week4"></option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="button" class="D001 btn btn-info">
+                              D001
+                            </button>
+
+                            <button type="button" class="D002 btn btn-info">
+                              D002
+                            </button>
+                          </div>
+                        </div>
+
+                        <table
+                          class="weekBookingTime table table-bordered text-center"
+                        >
+                          <tbody>
+                            <tr class="chineseWeekDay">
+                              <th>一</th>
+                              <th>二</th>
+                              <th>三</th>
+                              <th>四</th>
+                              <th>五</th>
+                              <th>六</th>
+                              <th>日</th>
+                            </tr>
+                            <tr class="weeekDate">
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <!--class btn-outline-info 點選後可改成btn-block加上會變暗  -->
+
+                              <td>
+                                <button
+                                  data-num="0"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="1"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="2"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="3"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="4"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="5"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="6"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  早
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button
+                                  data-num="0"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="1"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="2"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="3"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="4"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="5"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="6"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  午
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button
+                                  data-num="0"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="1"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="2"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="3"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="4"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="5"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  data-num="6"
+                                  type="button"
+                                  class="btn btn-outline-info btn-block btn-lg"
+                                >
+                                  晚
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <button type="button" class="saveDr btn btn-info">
+                        儲存
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
+              <!--/.col (left) -->
+
+              <!-- right column -->
+              <div class="col-md-6"></div>
+              <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- ============ Footer段落 ============ -->
+      <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-none d-sm-inline">Tibame TGA102 第一組</div>
+        <!-- Default to the left -->
+        <strong
+          >Copyright &copy; 2014-2021
+          <a href="https://adminlte.io">AdminLTE.io</a>.</strong
+        >
+        All rights reserved.
+      </footer>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+      <!-- ============ Footer段落 ============ -->
+      <!-- /.content-wrapper -->
+    </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/adminlte.min.js"></script>
+    <!-- vickyTsai js -->
+    <script src="js/index_doctor_scheduleJs.js"></script>
+    <script src="js/importHeader.js"></script>
+    <script src="js/apiPath.js"></script>
+  </body>
+</html>

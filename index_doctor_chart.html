@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>牙樂多 | 後台系統Template</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <!-- 主要開發區塊 -->
+    <div class="wrapper">
+            <header id="header"></header>
+      <!-- Main Sidebar Container 主側邊欄-->
+      <aside
+        id="sidebar"
+        class="main-sidebar sidebar-dark-primary elevation-4"
+      >
+    
+    
+    </aside>
+      <!-- Content Wrapper. Contains page content 主頁面欄位-->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">病歷填寫</h1>
+              </div>
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+              <!-- <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        病歷系統
+                                    </li>
+                                </ol>
+                            </div> -->
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <div class="content">
+          <div class="container-fluid">
+            <div
+              class="row"
+              style="
+                width: 600px;
+                margin-left: 10px;
+                display: flex;
+                flex-wrap: nowrap;
+              "
+            >
+              <!-- left column -->
+              <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-success">
+                  <div class="card-header">
+                    <h3 class="card-title">病歷表</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="quickForm" onsubmit="return false">
+                    <div class="card-body">
+                      <!-- 第一列 -->
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <!-- <div class="form-group">
+                            <label>醫師編號</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="請輸入醫師編號"
+                              readonly
+                            />
+                          </div> -->
+                          <div class="form-group">
+                            <label>主治醫師</label>
+                            <select class="dr form-control">
+                              <option>D001 </option>
+                              <option>D002 </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /第一列 -->
+                      <!-- 第二列 -->
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <!-- select -->
+                          <div class="form-group">
+                            <label>病患身分證字號</label>
+                            <select class="patientID form-control" required>
+                              <option>請先選擇看診醫師</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <!-- select -->
+                          <div class="form-group">
+                            <label>看診日期</label>
+                            <select class="patientDate form-control" required>
+                              <option>請先選擇身分證字號</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /第二列 -->
+
+                      <!-- 第三列 -->
+                      <div class="form-group">
+                        <label>病歷紀錄</label>
+                        <textarea
+                          id="chart"
+                          class="chart form-control textareaChart"
+                          rows="3"
+                          placeholder="請填寫就診紀錄"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="form-group"></div>
+                      <!-- /第三列 -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <button type="submit" class="chart btn btn-success">
+                        儲存
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
+              <!--/.col (left) -->
+
+              <!-- right column -->
+              <div class="col-md-7">
+                <!-- <div class="col-md-12" > -->
+                <!-- jquery validation -->
+                <div class="card card-warning">
+                  <div class="card-header">
+                    <h3 class="card-title">1 診看診叫號</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <!-- <form id="quickForm" onsubmit="return false"> -->
+                    <div class="card-body">
+                      <!-- 第一列 -->
+                      <div class="row">
+                        <div class="form-group">
+                          <label class="time"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group">
+                          <label>目前叫號 : <span class="dr1">休診中</span> </label>
+                        </div>
+                      </div>
+
+                      <!-- /第一列 -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <button type="button" class="dr1 btn btn-warning">
+                        下一號
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">2 診看診叫號</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="quickForm">
+                    <div class="card-body">
+                      <!-- 第一列 -->
+                      <div class="row">
+                        <div class="form-group">
+                          <label class="time"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group">
+                          <label>目前叫號 : <span class="dr2">休診中</span> </label>
+                        </div>
+                      </div>
+
+                      <!-- /第一列 -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <button type="button" class="dr2 btn btn-primary">
+                        下一號
+                      </button>
+                    </div>
+                  <!-- </form> -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!--/.col (left) -->
+
+              <!-- </div> -->
+              <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- ============ Footer段落 ============ -->
+<footer id="footer" class="main-footer"></footer>
+      <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+      <!-- /.control-sidebar -->
+      <!-- ============ Footer段落 ============ -->
+      <!-- /.content-wrapper -->
+    </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/adminlte.min.js"></script>
+    <!-- vickyTsai's js -->
+    <script src="js/index_doctor_chartJs.js"></script>
+    <script src="js/importHeader.js"></script>
+            <script src="js/apiPath.js"></script>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>牙樂多 | 後台系統Template</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+    <!-- Vicky css -->
+    <link rel="stylesheet" href="css/vickyCss.css" />
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <!-- 主要開發區塊 -->
+    <div class="wrapper">
+      <header id="header"></header>
+      <!-- Main Sidebar Container 主側邊欄-->
+      <aside
+        id="sidebar"
+        class="main-sidebar sidebar-dark-primary elevation-4"
+      ></aside>
+      <!-- Content Wrapper. Contains page content 主頁面欄位-->
+
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">門診時刻表 醫師資料修改</h1>
+              </div>
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+              <!-- <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        病歷系統
+                                    </li>
+                                </ol>
+                            </div> -->
+              <!-- /.col -->
+              <!-- 麵包屑 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row" style="width: 600px; margin-left: 50px">
+              <!-- left column -->
+              <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-success">
+                  <div class="card-header">
+                    <h3 class="card-title">門診時刻表 醫師檔案</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="quickForm" onsubmit="return false">
+                    <div class="card-body">
+                      <!-- 第一列 -->
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>主治醫師</label>
+                            <select class="dr form-control">
+                              <option>D001</option>
+                              <option>D002</option>
+                            </select>
+                          </div>
+                          <button type="button" class="search btn btn-success">
+                            查詢
+                          </button>
+                          <hr />
+                          <!-- text input -->
+                          <div class="form-group">
+                            <label>醫師姓名</label>
+                            <input
+                              type="text"
+                              class="drName form-control"
+                              placeholder="請輸入醫師姓名"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>醫師編號</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="請輸入醫師編號"
+                              readonly
+                            />
+                          </div>
+                        </div> -->
+                      </div>
+                      <!-- /第一列 -->
+
+                      <!-- 第二列 -->
+                      <!-- <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>密碼</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              placeholder="請輸入新密碼"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>證書字號</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="請輸入證書字號"
+                              d
+                            />
+                          </div>
+                        </div>
+                      </div> -->
+                      <!-- /第二列 -->
+
+                      <!-- 第三列 -->
+                      <!-- <div class="form-group">
+                        <label>信箱</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Enter ..."
+                        />
+                      </div> -->
+
+                      <div class="form-group">
+                        <label>門診時刻照片上傳</label>
+                        <div class="custom-file">
+                          <input
+                            type="file"
+                            class="custom-file-input"
+                            id="p_file"
+                            required
+                          />
+                          <label class="custom-file-label" for="p_file"
+                            >選擇檔案</label
+                          >
+                        </div>
+                        <div id="preview">
+                          <span class="text">預覽圖</span>
+                        </div>
+                      </div>
+                      <!-- /第三列 -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <button
+                        id="btn_submit"
+                        type="submit"
+                        class="btn btn-success"
+                      >
+                        儲存
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
+              <!--/.col (left) -->
+
+              <!-- right column -->
+              <div class="col-md-6"></div>
+              <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- ============ Footer段落 ============ -->
+      <footer id="footer" class="main-footer"></footer>
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+      <!-- ============ Footer段落 ============ -->
+      <!-- /.content-wrapper -->
+    </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/adminlte.min.js"></script>
+    <!-- vicky JS -->
+    <script src="js/index_doctor_dataJs.js"></script>
+    <script src="js/importHeader.js"></script>
+    <script src="js/apiPath.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>牙樂多 | 後台系統Template</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="css/schedule.css/main.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <!-- 主要開發區塊 -->
+    <div class="wrapper">
+        <header id="header"></header>
+        <!-- Main Sidebar Container 主側邊欄-->
+        <aside id="sidebar" class="main-sidebar sidebar-dark-primary elevation-4"></aside>
+
+        <!-- Content Wrapper. Contains page content 主頁面欄位-->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <!-- <div class="container-fluid"> -->
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">排班系統</h1>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                        </ol>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                <!-- Main content -->
+                <div class="row">
+                    <!-- <div class="col"> -->
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+                <!-- the events -->
+                <div id="external-events" hidden>
+                </div>
+                <!-- /.col -->
+                <div class="col-lg-9">
+                    <!-- THE CALENDAR -->
+                    <!-- <div class="container" style="width: 950px;"> -->
+                    <div class="container">
+                        <div id="calendar" style="background-color:rgb(255, 255, 255)"></div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+            <!-- /.Main content -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- 點選日期，跳出的表單 -->
+        <div class="modal fade" id="eventFormModal" tabindex="-1" role="dialog" aria-labelledby="eventFormModal"
+            data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>編輯</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="inputxxx">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h4 class="modal-title" id="eventFormModalTitle"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-form">
+                            <form id="eventForm">
+                                <input id="type" hidden></input>
+                                <input id="oldId" hidden></input>
+                                <div class="form-group">
+                                    <label for="dateInput" class="control-label">日期</label>
+                                    <input type="text" class="from-control" id="dateInput" name="dateInput" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nameInput" class="control-label">姓名</label>
+                                    <span class="from-control" id="nameInputla">花花</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventTimeInput" class="control-label">班別</label>
+                                    <select type="text" class="from-control" id="eventTimeInputla"
+                                        name="eventTimeInput">
+                                        <option value="0">請選擇</option>
+                                        <option value="am">早班</option>
+                                        <option value="pm">晚班</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="relaxInput" class="control-label">假別</label>
+                                    <select type="text" class="from-control" id="relaxInputla" name="relaxInput">
+                                        <option value="0">請選擇</option>
+                                        <option value="b">基本假</option>
+                                        <option value="s">特休</option>
+                                        <option value="t">事假</option>
+                                        <option value="o">其他</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                            id="eventFormButtonCancel">取消</button>
+                        <button type="button" class="btn btn-primary" id="eventFormButtonsure">確定</button>
+                        <button type="button" class="btn btn-danger" id="eventFormButtonreremove">刪除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /點選日期，跳出的表單 -->
+        <!-- ============ Footer段落 ============ -->
+        <footer id="footer" class="main-footer"></footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- ============ Footer段落 ============ -->
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script> -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Development version -->
+    <!-- AdminLTE App -->
+    <script src="js/adminlte.min.js"></script>
+    <!-- fullCalendar 5.10.1 -->
+    <script src="plugins/schedule.js/moment.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="plugins/schedule.js/demo.js"></script>
+    <!-- jQuery UI -->
+    <script src="plugins/schedule.js/jquery-ui.min.js"></script>
+
+    <script src="plugins/schedule.js/okschedule.js"></script>
+
+    <script src="js/importHeader.js"></script>
+    <!-- token -->
+    <script src="js/jwt.js"></script>
+    <script src="js/apiPath.js"></script>
+
+</body>
+
+</html>
